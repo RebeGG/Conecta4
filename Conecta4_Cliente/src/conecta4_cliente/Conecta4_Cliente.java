@@ -5,7 +5,12 @@
  */
 package conecta4_cliente;
 
+import conecta4_cliente.Vista.Vista;
 import conecta4_protocolo.Cliente;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
