@@ -16,7 +16,6 @@ public class Vista extends javax.swing.JFrame {
 
     private JButton[][] botones = new JButton[6][7];
     private Cliente cliente;
-    private RoundedBorder round = new RoundedBorder(800);
 
     public Vista() {
         setVisible(true);
@@ -33,53 +32,6 @@ public class Vista extends javax.swing.JFrame {
     }
 
     private void configurar() {
-        btn20n.setBorder(round);
-        btn50.setBorder(round);
-        btn10.setBorder(round);
-        btn01.setBorder(round);
-        btn11n.setBorder(round);
-        btn40n.setBorder(round);
-        btn13n.setBorder(round);
-        btn30n.setBorder(round);
-        btn00.setBorder(round);
-        btn51n.setBorder(round);
-
-        btn52n.setBorder(round);
-        btn43n.setBorder(round);
-        btn44n.setBorder(round);
-        btn54n.setBorder(round);
-        btn55n.setBorder(round);
-        btn56n.setBorder(round);
-        btn21n.setBorder(round);
-        btn31n.setBorder(round);
-        btn22n.setBorder(round);
-        btn32n.setBorder(round);
-
-        btn03.setBorder(round);
-        btn04.setBorder(round);
-        btn05.setBorder(round);
-        btn06.setBorder(round);
-        btn12n.setBorder(round);
-        btn14n.setBorder(round);
-        btn15n.setBorder(round);
-        btn02.setBorder(round);
-        btn16n.setBorder(round);
-        btn26n.setBorder(round);
-
-        btn25n.setBorder(round);
-        btn24n.setBorder(round);
-        btn23n.setBorder(round);
-        btn36n.setBorder(round);
-        btn35n.setBorder(round);
-        btn34n.setBorder(round);
-        btn33n.setBorder(round);
-        btn46n.setBorder(round);
-        btn42n.setBorder(round);
-        btn45n.setBorder(round);
-
-        btn41n.setBorder(round);
-        btn53n.setBorder(round);
-
         botones[0][0] = btn00;
         botones[0][1] = btn01;
         botones[0][2] = btn02;
@@ -196,328 +148,287 @@ public class Vista extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 204));
 
-        btn30n.setBackground(new java.awt.Color(0, 0, 204));
-        btn30n.setBorder(null);
+        btn30n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn30n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn30nActionPerformed(evt);
             }
         });
 
-        btn00.setBackground(new java.awt.Color(0, 0, 204));
-        btn00.setBorder(null);
+        btn00.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn00.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn00ActionPerformed(evt);
             }
         });
 
-        btn01.setBackground(new java.awt.Color(0, 0, 204));
-        btn01.setBorder(null);
+        btn01.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn01ActionPerformed(evt);
             }
         });
 
-        btn10.setBackground(new java.awt.Color(0, 0, 204));
-        btn10.setBorder(null);
+        btn10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn10ActionPerformed(evt);
             }
         });
 
-        btn13n.setBackground(new java.awt.Color(0, 0, 204));
-        btn13n.setBorder(null);
+        btn13n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn13n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn13nActionPerformed(evt);
             }
         });
 
-        btn20n.setBackground(new java.awt.Color(0, 0, 204));
-        btn20n.setBorder(null);
+        btn20n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn20n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn20nActionPerformed(evt);
             }
         });
 
-        btn11n.setBackground(new java.awt.Color(0, 0, 204));
-        btn11n.setBorder(null);
+        btn11n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn11n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn11nActionPerformed(evt);
             }
         });
 
-        btn40n.setBackground(new java.awt.Color(0, 0, 204));
-        btn40n.setBorder(null);
+        btn40n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn40n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn40nActionPerformed(evt);
             }
         });
 
-        btn51n.setBackground(new java.awt.Color(0, 0, 204));
-        btn51n.setBorder(null);
+        btn51n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn51n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn51nActionPerformed(evt);
             }
         });
 
-        btn52n.setBackground(new java.awt.Color(0, 0, 204));
-        btn52n.setBorder(null);
+        btn52n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn52n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn52nActionPerformed(evt);
             }
         });
 
-        btn43n.setBackground(new java.awt.Color(0, 0, 204));
-        btn43n.setBorder(null);
+        btn43n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn43n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn43nActionPerformed(evt);
             }
         });
 
-        btn44n.setBackground(new java.awt.Color(0, 0, 204));
-        btn44n.setBorder(null);
+        btn44n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn44n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn44nActionPerformed(evt);
             }
         });
 
-        btn54n.setBackground(new java.awt.Color(0, 0, 204));
-        btn54n.setBorder(null);
+        btn54n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn54n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn54nActionPerformed(evt);
             }
         });
 
-        btn55n.setBackground(new java.awt.Color(0, 0, 204));
-        btn55n.setBorder(null);
+        btn55n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn55n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn55nActionPerformed(evt);
             }
         });
 
-        btn56n.setBackground(new java.awt.Color(0, 0, 204));
-        btn56n.setBorder(null);
+        btn56n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn56n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn56nActionPerformed(evt);
             }
         });
 
-        btn21n.setBackground(new java.awt.Color(0, 0, 204));
-        btn21n.setBorder(null);
+        btn21n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn21n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn21nActionPerformed(evt);
             }
         });
 
-        btn31n.setBackground(new java.awt.Color(0, 0, 204));
-        btn31n.setBorder(null);
+        btn31n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn31n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn31nActionPerformed(evt);
             }
         });
 
-        btn22n.setBackground(new java.awt.Color(0, 0, 204));
-        btn22n.setBorder(null);
+        btn22n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn22n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn22nActionPerformed(evt);
             }
         });
 
-        btn32n.setBackground(new java.awt.Color(0, 0, 204));
-        btn32n.setBorder(null);
+        btn32n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn32n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn32nActionPerformed(evt);
             }
         });
 
-        btn03.setBackground(new java.awt.Color(0, 0, 204));
-        btn03.setBorder(null);
+        btn03.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn03.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn03ActionPerformed(evt);
             }
         });
 
-        btn04.setBackground(new java.awt.Color(0, 0, 204));
-        btn04.setBorder(null);
+        btn04.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn04.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn04ActionPerformed(evt);
             }
         });
 
-        btn05.setBackground(new java.awt.Color(0, 0, 204));
-        btn05.setBorder(null);
+        btn05.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn05.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn05ActionPerformed(evt);
             }
         });
 
-        btn06.setBackground(new java.awt.Color(0, 0, 204));
-        btn06.setBorder(null);
+        btn06.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn06.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn06ActionPerformed(evt);
             }
         });
 
-        btn12n.setBackground(new java.awt.Color(0, 0, 204));
-        btn12n.setBorder(null);
+        btn12n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn12n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn12nActionPerformed(evt);
             }
         });
 
-        btn14n.setBackground(new java.awt.Color(0, 0, 204));
-        btn14n.setBorder(null);
+        btn14n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn14n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn14nActionPerformed(evt);
             }
         });
 
-        btn15n.setBackground(new java.awt.Color(0, 0, 204));
-        btn15n.setBorder(null);
+        btn15n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn15n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn15nActionPerformed(evt);
             }
         });
 
-        btn02.setBackground(new java.awt.Color(0, 0, 204));
-        btn02.setBorder(null);
+        btn02.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn02ActionPerformed(evt);
             }
         });
 
-        btn16n.setBackground(new java.awt.Color(0, 0, 204));
-        btn16n.setBorder(null);
+        btn16n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn16n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn16nActionPerformed(evt);
             }
         });
 
-        btn26n.setBackground(new java.awt.Color(0, 0, 204));
-        btn26n.setBorder(null);
+        btn26n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn26n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn26nActionPerformed(evt);
             }
         });
 
-        btn25n.setBackground(new java.awt.Color(0, 0, 204));
-        btn25n.setBorder(null);
+        btn25n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn25n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn25nActionPerformed(evt);
             }
         });
 
-        btn24n.setBackground(new java.awt.Color(0, 0, 204));
-        btn24n.setBorder(null);
+        btn24n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn24n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn24nActionPerformed(evt);
             }
         });
 
-        btn23n.setBackground(new java.awt.Color(0, 0, 204));
-        btn23n.setBorder(null);
+        btn23n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn23n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn23nActionPerformed(evt);
             }
         });
 
-        btn36n.setBackground(new java.awt.Color(0, 0, 204));
-        btn36n.setBorder(null);
+        btn36n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn36n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn36nActionPerformed(evt);
             }
         });
 
-        btn35n.setBackground(new java.awt.Color(0, 0, 204));
-        btn35n.setBorder(null);
+        btn35n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn35n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn35nActionPerformed(evt);
             }
         });
 
-        btn34n.setBackground(new java.awt.Color(0, 0, 204));
-        btn34n.setBorder(null);
+        btn34n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn34n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn34nActionPerformed(evt);
             }
         });
 
-        btn33n.setBackground(new java.awt.Color(0, 0, 204));
-        btn33n.setBorder(null);
+        btn33n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn33n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn33nActionPerformed(evt);
             }
         });
 
-        btn46n.setBackground(new java.awt.Color(0, 0, 204));
-        btn46n.setBorder(null);
+        btn46n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn46n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn46nActionPerformed(evt);
             }
         });
 
-        btn42n.setBackground(new java.awt.Color(0, 0, 204));
-        btn42n.setBorder(null);
+        btn42n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn42n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn42nActionPerformed(evt);
             }
         });
 
-        btn45n.setBackground(new java.awt.Color(0, 0, 204));
-        btn45n.setBorder(null);
+        btn45n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn45n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn45nActionPerformed(evt);
             }
         });
 
-        btn41n.setBackground(new java.awt.Color(0, 0, 204));
-        btn41n.setBorder(null);
+        btn41n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn41n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn41nActionPerformed(evt);
             }
         });
 
-        btn53n.setBackground(new java.awt.Color(0, 0, 204));
-        btn53n.setBorder(null);
+        btn53n.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn53n.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn53nActionPerformed(evt);
@@ -528,8 +439,7 @@ public class Vista extends javax.swing.JFrame {
         lblTurno.setForeground(new java.awt.Color(255, 255, 255));
         lblTurno.setText("Turno");
 
-        btn50.setBackground(new java.awt.Color(0, 0, 204));
-        btn50.setBorder(null);
+        btn50.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn50ActionPerformed(evt);
