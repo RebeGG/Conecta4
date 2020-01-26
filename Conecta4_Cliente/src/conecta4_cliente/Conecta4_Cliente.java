@@ -6,7 +6,8 @@
 package conecta4_cliente;
 
 import conecta4_cliente.Vista.Vista;
-import conecta4_protocolo.Cliente;
+//import conecta4_protocolo.Cliente;
+import conecta4_cliente.Modelo.Cliente;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -25,8 +26,7 @@ public class Conecta4_Cliente {
     }
 
     public void iniciar() {
-        clienteBase = new Cliente();
-        clienteBase.iniciar();
+        Vista vista = new Vista();
     }
 
     private Cliente clienteBase;

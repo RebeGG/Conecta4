@@ -16,15 +16,23 @@ public class Vista extends javax.swing.JFrame {
 
     private JButton[][] botones = new JButton[6][7];
     private Cliente cliente;
-    private RoundedBorder round= new RoundedBorder(800);
-    
+    private RoundedBorder round = new RoundedBorder(800);
+
     public Vista() {
         setVisible(true);
-        initComponents();  
-        configurar();
+        try {
+            initComponents();
+            configurar();
+            cliente = new Cliente(this);
+            Thread hilo = new Thread(cliente);
+            hilo.start();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
-    
-    private void configurar(){
+
+    private void configurar() {
         btn20n.setBorder(round);
         btn50.setBorder(round);
         btn10.setBorder(round);
@@ -35,7 +43,7 @@ public class Vista extends javax.swing.JFrame {
         btn30n.setBorder(round);
         btn00.setBorder(round);
         btn51n.setBorder(round);
-        
+
         btn52n.setBorder(round);
         btn43n.setBorder(round);
         btn44n.setBorder(round);
@@ -46,7 +54,7 @@ public class Vista extends javax.swing.JFrame {
         btn31n.setBorder(round);
         btn22n.setBorder(round);
         btn32n.setBorder(round);
-        
+
         btn03.setBorder(round);
         btn04.setBorder(round);
         btn05.setBorder(round);
@@ -57,7 +65,7 @@ public class Vista extends javax.swing.JFrame {
         btn02.setBorder(round);
         btn16n.setBorder(round);
         btn26n.setBorder(round);
-        
+
         btn25n.setBorder(round);
         btn24n.setBorder(round);
         btn23n.setBorder(round);
@@ -68,72 +76,73 @@ public class Vista extends javax.swing.JFrame {
         btn46n.setBorder(round);
         btn42n.setBorder(round);
         btn45n.setBorder(round);
-        
+
         btn41n.setBorder(round);
         btn53n.setBorder(round);
-        
-        botones[0][0] =btn00;
-        botones[0][1] =btn01;
-        botones[0][2] =btn02;
-        botones[0][3] =btn03;
-        botones[0][4] =btn04;
-        botones[0][5] =btn05;
-        botones[0][6] =btn06;
 
-        botones[1][0] =btn10;        
-        botones[1][1] =btn11n;
-        botones[1][2] =btn12n;
-        botones[1][3] =btn13n;
-        botones[1][4] =btn14n;
-        botones[1][5] =btn15n;
-        botones[1][6] =btn16n;
-        
-        botones[2][0] =btn20n; 
-        botones[2][1] =btn21n;
-        botones[2][2] =btn22n;
-        botones[2][3] =btn23n;
-        botones[2][4] =btn24n;
-        botones[2][5] =btn25n;
-        botones[2][6] =btn26n;
-        
-        botones[3][0] =btn30n;
-        botones[3][1] =btn31n;
-        botones[3][2] =btn32n;
-        botones[3][3] =btn33n;
-        botones[3][4] =btn34n;
-        botones[3][5] =btn35n;
-        botones[3][6] =btn36n;
-        
-        botones[4][0] =btn40n;
-        botones[4][1] =btn41n;
-        botones[4][2] =btn42n;
-        botones[4][3] =btn43n;
-        botones[4][4] =btn44n;
-        botones[4][5] =btn45n;
-        botones[4][6] =btn46n;
-        
-        botones[5][0] =btn50;
-        botones[5][1] =btn51n;
-        botones[5][2] =btn52n;
-        botones[5][3] =btn53n;
-        botones[5][4] =btn54n;
-        botones[5][5] =btn55n;   
-        botones[5][6] =btn56n;
-        
+        botones[0][0] = btn00;
+        botones[0][1] = btn01;
+        botones[0][2] = btn02;
+        botones[0][3] = btn03;
+        botones[0][4] = btn04;
+        botones[0][5] = btn05;
+        botones[0][6] = btn06;
+
+        botones[1][0] = btn10;
+        botones[1][1] = btn11n;
+        botones[1][2] = btn12n;
+        botones[1][3] = btn13n;
+        botones[1][4] = btn14n;
+        botones[1][5] = btn15n;
+        botones[1][6] = btn16n;
+
+        botones[2][0] = btn20n;
+        botones[2][1] = btn21n;
+        botones[2][2] = btn22n;
+        botones[2][3] = btn23n;
+        botones[2][4] = btn24n;
+        botones[2][5] = btn25n;
+        botones[2][6] = btn26n;
+
+        botones[3][0] = btn30n;
+        botones[3][1] = btn31n;
+        botones[3][2] = btn32n;
+        botones[3][3] = btn33n;
+        botones[3][4] = btn34n;
+        botones[3][5] = btn35n;
+        botones[3][6] = btn36n;
+
+        botones[4][0] = btn40n;
+        botones[4][1] = btn41n;
+        botones[4][2] = btn42n;
+        botones[4][3] = btn43n;
+        botones[4][4] = btn44n;
+        botones[4][5] = btn45n;
+        botones[4][6] = btn46n;
+
+        botones[5][0] = btn50;
+        botones[5][1] = btn51n;
+        botones[5][2] = btn52n;
+        botones[5][3] = btn53n;
+        botones[5][4] = btn54n;
+        botones[5][5] = btn55n;
+        botones[5][6] = btn56n;
+
     }
 
-   public void cambioTexto(String cad){
-        lblTurno.setText(cad);       
+    public void cambioTexto(String cad) {
+        lblTurno.setText(cad);
     }
-    
-    public JButton[][] getBotones(){
+
+    public JButton[][] getBotones() {
         return botones;
     }
-    
+
     //Cuando se preciona un boton enviamos los datos de la jugada al servidor (fila y columna del boton precionado)
-    public void enviarTurno(int f,int c){
+    public void enviarTurno(int f, int c) {
         cliente.enviarTurno(f, c);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -715,167 +724,167 @@ public class Vista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn31nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn31nActionPerformed
-         enviarTurno(3,1);
+        enviarTurno(3, 1);
     }//GEN-LAST:event_btn31nActionPerformed
 
     private void btn00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn00ActionPerformed
-        enviarTurno(0,0);
+        enviarTurno(0, 0);
     }//GEN-LAST:event_btn00ActionPerformed
 
     private void btn01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01ActionPerformed
-         enviarTurno(0,1);
+        enviarTurno(0, 1);
     }//GEN-LAST:event_btn01ActionPerformed
 
     private void btn02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn02ActionPerformed
-         enviarTurno(0,2);
+        enviarTurno(0, 2);
     }//GEN-LAST:event_btn02ActionPerformed
 
     private void btn03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn03ActionPerformed
-         enviarTurno(0,3);
+        enviarTurno(0, 3);
     }//GEN-LAST:event_btn03ActionPerformed
 
     private void btn04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn04ActionPerformed
-         enviarTurno(0,4);
+        enviarTurno(0, 4);
     }//GEN-LAST:event_btn04ActionPerformed
 
     private void btn05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn05ActionPerformed
-         enviarTurno(0,5);
+        enviarTurno(0, 5);
     }//GEN-LAST:event_btn05ActionPerformed
 
     private void btn06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn06ActionPerformed
-         enviarTurno(0,6);
+        enviarTurno(0, 6);
     }//GEN-LAST:event_btn06ActionPerformed
 
     private void btn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10ActionPerformed
-         enviarTurno(1,0);
+        enviarTurno(1, 0);
     }//GEN-LAST:event_btn10ActionPerformed
 
     private void btn11nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn11nActionPerformed
-        enviarTurno(1,1);
+        enviarTurno(1, 1);
     }//GEN-LAST:event_btn11nActionPerformed
 
     private void btn12nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12nActionPerformed
-        enviarTurno(1,2);
+        enviarTurno(1, 2);
     }//GEN-LAST:event_btn12nActionPerformed
 
     private void btn13nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn13nActionPerformed
-        enviarTurno(1,3);
+        enviarTurno(1, 3);
     }//GEN-LAST:event_btn13nActionPerformed
 
     private void btn14nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn14nActionPerformed
-         enviarTurno(1,4);
+        enviarTurno(1, 4);
     }//GEN-LAST:event_btn14nActionPerformed
 
     private void btn15nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn15nActionPerformed
-         enviarTurno(1,5);
+        enviarTurno(1, 5);
     }//GEN-LAST:event_btn15nActionPerformed
 
     private void btn16nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn16nActionPerformed
-         enviarTurno(1,6);
+        enviarTurno(1, 6);
     }//GEN-LAST:event_btn16nActionPerformed
 
     private void btn20nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn20nActionPerformed
-         enviarTurno(2,0);
+        enviarTurno(2, 0);
     }//GEN-LAST:event_btn20nActionPerformed
 
     private void btn21nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn21nActionPerformed
-        enviarTurno(2,1);
+        enviarTurno(2, 1);
     }//GEN-LAST:event_btn21nActionPerformed
 
     private void btn22nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn22nActionPerformed
-         enviarTurno(2,2);
+        enviarTurno(2, 2);
     }//GEN-LAST:event_btn22nActionPerformed
 
     private void btn23nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn23nActionPerformed
-         enviarTurno(2,3);
+        enviarTurno(2, 3);
     }//GEN-LAST:event_btn23nActionPerformed
 
     private void btn24nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn24nActionPerformed
-         enviarTurno(2,4);
+        enviarTurno(2, 4);
     }//GEN-LAST:event_btn24nActionPerformed
 
     private void btn25nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn25nActionPerformed
-         enviarTurno(2,5);
+        enviarTurno(2, 5);
     }//GEN-LAST:event_btn25nActionPerformed
 
     private void btn26nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn26nActionPerformed
-         enviarTurno(2,6);
+        enviarTurno(2, 6);
     }//GEN-LAST:event_btn26nActionPerformed
 
     private void btn30nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn30nActionPerformed
-         enviarTurno(3,0);
+        enviarTurno(3, 0);
     }//GEN-LAST:event_btn30nActionPerformed
 
     private void btn32nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn32nActionPerformed
-         enviarTurno(3,2);
+        enviarTurno(3, 2);
     }//GEN-LAST:event_btn32nActionPerformed
 
     private void btn33nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn33nActionPerformed
-         enviarTurno(3,3);
+        enviarTurno(3, 3);
     }//GEN-LAST:event_btn33nActionPerformed
 
     private void btn34nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn34nActionPerformed
-         enviarTurno(3,4);
+        enviarTurno(3, 4);
     }//GEN-LAST:event_btn34nActionPerformed
 
     private void btn35nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn35nActionPerformed
-         enviarTurno(3,5);
+        enviarTurno(3, 5);
     }//GEN-LAST:event_btn35nActionPerformed
 
     private void btn36nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn36nActionPerformed
-         enviarTurno(3,6);
+        enviarTurno(3, 6);
     }//GEN-LAST:event_btn36nActionPerformed
 
     private void btn40nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn40nActionPerformed
-         enviarTurno(4,0);
+        enviarTurno(4, 0);
     }//GEN-LAST:event_btn40nActionPerformed
 
     private void btn41nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn41nActionPerformed
-         enviarTurno(4,1);
+        enviarTurno(4, 1);
     }//GEN-LAST:event_btn41nActionPerformed
 
     private void btn42nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn42nActionPerformed
-        enviarTurno(4,2);
+        enviarTurno(4, 2);
     }//GEN-LAST:event_btn42nActionPerformed
 
     private void btn43nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn43nActionPerformed
-        enviarTurno(4,3);
+        enviarTurno(4, 3);
     }//GEN-LAST:event_btn43nActionPerformed
 
     private void btn44nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn44nActionPerformed
-         enviarTurno(4,4);
+        enviarTurno(4, 4);
     }//GEN-LAST:event_btn44nActionPerformed
 
     private void btn45nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn45nActionPerformed
-         enviarTurno(4,5);
+        enviarTurno(4, 5);
     }//GEN-LAST:event_btn45nActionPerformed
 
     private void btn46nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn46nActionPerformed
-        enviarTurno(4,6);
+        enviarTurno(4, 6);
     }//GEN-LAST:event_btn46nActionPerformed
 
     private void btn51nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn51nActionPerformed
-        enviarTurno(5,1);
+        enviarTurno(5, 1);
     }//GEN-LAST:event_btn51nActionPerformed
 
     private void btn52nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn52nActionPerformed
-         enviarTurno(5,2);
+        enviarTurno(5, 2);
     }//GEN-LAST:event_btn52nActionPerformed
 
     private void btn53nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn53nActionPerformed
-         enviarTurno(5,3);
+        enviarTurno(5, 3);
     }//GEN-LAST:event_btn53nActionPerformed
 
     private void btn54nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn54nActionPerformed
-         enviarTurno(5,4);
+        enviarTurno(5, 4);
     }//GEN-LAST:event_btn54nActionPerformed
 
     private void btn55nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn55nActionPerformed
-        enviarTurno(5,5);
+        enviarTurno(5, 5);
     }//GEN-LAST:event_btn55nActionPerformed
 
     private void btn56nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn56nActionPerformed
-         enviarTurno(5,6);
+        enviarTurno(5, 6);
     }//GEN-LAST:event_btn56nActionPerformed
 
     private void btn50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn50ActionPerformed
