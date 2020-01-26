@@ -1,22 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package conecta4_cliente;
 
 import conecta4_cliente.Vista.Vista;
-//import conecta4_protocolo.Cliente;
-import conecta4_cliente.Modelo.Cliente;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
-/**
- *
- * @author rebecca
- */
+//  Universidad Nacional
+//  Facultad de Ciencias Exactas y Naturales
+//  Escuela de Informática
+//  
+//     Práctica #4
+//   (Conecta4_Cliente)
+//
+//  Autores: Rebecca Garita Gutiérrez
+//           María Fernanda González Arias
+//
+//  III Ciclo 2019
+
 public class Conecta4_Cliente {
 
     public static void main(String[] args) {
@@ -28,6 +25,4 @@ public class Conecta4_Cliente {
     public void iniciar() {
         Vista vista = new Vista();
     }
-
-    private Cliente clienteBase;
 }

@@ -1,17 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package conecta4_cliente.Vista;
 
 import conecta4_cliente.Modelo.Cliente;
 import javax.swing.JButton;
 
-/**
- *
- * @author Fernanda
- */
+//  Universidad Nacional
+//  Facultad de Ciencias Exactas y Naturales
+//  Escuela de Informática
+//  
+//     Práctica #4
+//      (Vista)
+//
+//  Autores: Rebecca Garita Gutiérrez
+//           María Fernanda González Arias
+//
+//  III Ciclo 2019
+
 public class Vista extends javax.swing.JFrame {
 
     private JButton[][] botones = new JButton[6][7];
@@ -146,6 +149,7 @@ public class Vista extends javax.swing.JFrame {
         btnReiniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Conecta 4");
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 204));
 

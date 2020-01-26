@@ -2,21 +2,25 @@ package conecta4_cliente.Modelo;
 
 import conecta4_cliente.Vista.Vista;
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import sun.applet.Main;
 
-/**
- *
- * @author netosolis
- */
+//  Universidad Nacional
+//  Facultad de Ciencias Exactas y Naturales
+//  Escuela de Informática
+//  
+//     Práctica #4
+//     (Cliente)
+//
+//  Autores: Rebecca Garita Gutiérrez
+//           María Fernanda González Arias
+//
+//  III Ciclo 2019
+
 public class Cliente implements Runnable{
     private Socket cliente;
     private DataOutputStream out;
@@ -49,24 +53,24 @@ public class Cliente implements Runnable{
             mensaje =  in.readUTF();
             String split[] = mensaje.split(";");
             frame.cambioTexto(split[0]);
-            String XO = split[0].split(" ")[1];
+            String RA = split[0].split(" ")[1];
             turno = Boolean.valueOf(split[1]);
             while(true){
                 mensaje = in.readUTF();
                 /*
                 El mensaje esta compuesto por una cadena separada por ; cada separacion representa un dato
-                    mensaje[0] : representa X o O 
+                    mensaje[0] : representa R o A 
                     mensaje[1] : representa fila del tablero
                     mensaje[2] : representa columna del tablero
                     mensaje[3] : representa estado del juego [Perdiste, Ganaste, Empate]
                 */
                 
                 String[] mensajes = mensaje.split(";");
-                int xo = Integer.parseInt(mensajes[0]);
+                int ra = Integer.parseInt(mensajes[0]);
                 int f = Integer.parseInt(mensajes[1]);
                 int c = Integer.parseInt(mensajes[2]);
                 
-                if(xo == 1){
+                if(ra == 1){
                     botones[f][c].setBackground(Color.RED);
                 }else{
                     botones[f][c].setBackground(Color.YELLOW);
@@ -74,7 +78,7 @@ public class Cliente implements Runnable{
                 botones[f][c].removeActionListener(botones[f][c].getActionListeners()[0]);
                 turno = !turno;
                 
-                if(XO.equals(mensajes[3])){
+                if(RA.equals(mensajes[3])){
                     JOptionPane.showMessageDialog(frame, "¡Ganó!");
                     new Vista().setVisible(true);
                     frame.dispose();
