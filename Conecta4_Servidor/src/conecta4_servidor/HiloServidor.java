@@ -19,21 +19,21 @@ public class HiloServidor implements Runnable{
     private Socket socket;
     private DataOutputStream out;
     private DataInputStream in;
-    //Varible para guardar que le toco al jugador X o O
-    private int XO;
+    //Varible para guardar que le toco al jugador R o A
+    private int RA;
     //Matriz del juego
-    private int G[][];
+    private int Conecta4[][];
     //Turno
     private boolean turno;
     //Lista de los usuarios conectados al servidor
     private LinkedList<Socket> usuarios = new LinkedList<Socket>();
     
     //Constructor que recibe el socket que atendera el hilo y la lista de los jugadores el turno y la matriz del juego
-    public HiloServidor(Socket soc,LinkedList users,int xo,int[][] Gato){
+    public HiloServidor(Socket soc,LinkedList users,int ra,int[][] conecta4){
         socket = soc;
         usuarios = users;
-        XO = xo;
-        G = Gato;
+        RA = ra;
+        Conecta4 = conecta4;
     }
     
     
@@ -43,15 +43,15 @@ public class HiloServidor implements Runnable{
             //Inicializamos los canales de comunicacion y mandamos el turno a cada jugador
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
-            turno = XO == 1;
+            turno = RA == 1;
             String msg = "";
-            msg += "JUEGAS: " + (turno ? "X;":"O;");
+            msg += "JUEGAS: " + (turno ? "R;":"A;");
             msg += turno;
             out.writeUTF(msg);
             
             
             //Ciclo infinito que estara escuchando por los movimientos de cada jugador
-            //Cada que un jugador pone una X o O viene aca y le dice al otro jugador que es su turno
+            //Cada que un jugador pone una R o A viene aca y le dice al otro jugador que es su turno
             while(true){
                 //Leer los datos que se mandan cuando se selecciona un boton
                 String recibidos = in.readUTF();
@@ -67,18 +67,18 @@ public class HiloServidor implements Runnable{
                 int c = Integer.parseInt(recibido[1]);
                 /*
                     Se guarda la jugada en la matriz
-                    X : 1
-                    O : 0
+                    R : 1
+                    A : 0
                 
                 */
-                G[f][c] = XO;
+                Conecta4[f][c] = RA;
                 
                 /*
                 Se forma una cadena que se enviara a los jugadores, que lleva informacion del movimiento que se 
                 acaba de hacer
                 */
                 String cad = "";
-                cad += XO+";";
+                cad += RA+";";
                 cad += f+";";
                 cad += c+";";
                 
@@ -86,7 +86,7 @@ public class HiloServidor implements Runnable{
                 Se comprueba si alguien de los jugadores gano
                 y si el tablero ya se lleno... En los dos casos se notifica a los jugadores para empezar de nuevo la partida
                 */
-                boolean ganador = gano(XO);
+                boolean ganador = gano(RA);
                 boolean completo = lleno();
                 
                 if(!ganador && !completo){
@@ -97,7 +97,7 @@ public class HiloServidor implements Runnable{
                 }
                 else if(ganador){
                     vaciarMatriz();
-                    cad += XO == 1 ? "X":"O";
+                    cad += RA == 1 ? "R":"A";
                 }
                 
                 
@@ -126,14 +126,15 @@ public class HiloServidor implements Runnable{
         for (int i = 0; i < 6; i++) {
             cont = 0;
             for (int j = 0; j < 7; j++) {
-                if (this.G[i][j] == n) {
+                if (Conecta4[i][j] == n) {
                     cont++;
-                } else{
+                } 
+                else{
                     cont = 0;
                 }
-            }
-            if (cont == 4) {
-                return true;
+                if (cont == 4) {
+                    return true;
+                }
             }
         }
         return false;
@@ -145,14 +146,14 @@ public class HiloServidor implements Runnable{
         for (int j = 0; j < 7; j++) {
             cont = 0;
             for (int i = 0; i < 6; i++) {
-                if (G[i][j] == n) {
+                if (Conecta4[i][j] == n) {
                     cont++;
                 } else {
                     cont = 0;
                 }
-            }
-            if (cont == 4) {
-                return true;
+                if (cont == 4) {
+                    return true;
+                }
             }
         }
         return false;
@@ -169,15 +170,15 @@ public class HiloServidor implements Runnable{
         
         while(stopFila <= 5 && auxColumna <= 3){
             for(i = auxFila, j = auxColumna ; i<=stopFila && j<= stopColumna; i++, j++){
-                if(G[i][j] == n){
+                if(Conecta4[i][j] == n){
                    cont++;
                 }
                 else{
                    cont = 0;
                 }
-            }
-            if(cont == 4){
-                return true;
+                if(cont == 4){
+                    return true;
+                }
             }
             if(auxFila == 0 && stopColumna == 6){
                 stopFila--;
@@ -206,16 +207,16 @@ public class HiloServidor implements Runnable{
         int stopColumna = 3;
         
         while(stopFila <= 2 && auxColumna <= 3){
-            for(i = auxFila, j = auxColumna ; i<=stopFila && j<= stopColumna; i++, j++){
-                if(G[i][j] == n){
+            for(i = auxFila, j = auxColumna ; i>=stopFila && j<= stopColumna; i--, j++){
+                if(Conecta4[i][j] == n){
                    cont++;
                 }
                 else{
                    cont = 0;
                 }
-            }
-            if(cont == 4){
-                return true;
+                if(cont == 4){
+                    return true;
+                }
             }
             if(auxFila == 5 && stopColumna == 6){
                 stopFila++;
@@ -244,7 +245,7 @@ public class HiloServidor implements Runnable{
     public boolean lleno(){
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
-                if(G[i][j] == -1)return false;
+                if(Conecta4[i][j] == -1)return false;
             }
         }
         
@@ -256,7 +257,7 @@ public class HiloServidor implements Runnable{
     public void vaciarMatriz(){
         for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < 7; j++) {
-                    G[i][j] = -1;
+                    Conecta4[i][j] = -1;
                 }
         }
     }
